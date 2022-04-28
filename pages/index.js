@@ -14,6 +14,12 @@ import TableauEmbed from '../components/TableauEmbed'
 
 export default function Home() {
 
+  const myLoader = ({ src, width, quality }) => {
+    return `https://upload.wikimedia.org/${src}?w=${width}&q=${quality || 75}`
+
+    
+  }
+
 
   const html = "<div><div class=\'tableauPlaceholder\' id=\'viz1651165037078\' style=\'position: relative\'><noscript><a href=\'#\'><img alt=\'GESTIÓN DE METAS Y CONTRIBUCIÓN A LOS ODSSECRETARIA DE EDUCACIÓN \' src=\'https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;OD&#47;ODSEDUCACION&#47;Dashboard1&#47;1_rss.png\' style=\'border: none\' /></a></noscript><object class=\'tableauViz\'  style=\'display:none;\'><param name=\'host_url\' value=\'https%3A%2F%2Fpublic.tableau.com%2F\' /> <param name=\'embed_code_version\' value=\'3\' /> <param name=\'site_root\' value=\'\' /><param name=\'name\' value=\'ODSEDUCACION&#47;Dashboard1\' /><param name=\'tabs\' value=\'no\' /><param name=\'toolbar\' value=\'yes\' /><param name=\'static_image\' value=\'https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;OD&#47;ODSEDUCACION&#47;Dashboard1&#47;1.png\' /> <param name=\'animate_transition\' value=\'yes\' /><param name=\'display_static_image\' value=\'yes\' /><param name=\'display_spinner\' value=\'yes\' /><param name=\'display_overlay\' value=\'yes\' /><param name=\'display_count\' value=\'yes\' /><param name=\'language\' value=\'es-ES\' /><param name=\'filter\' value=\'publish=yes\' /></object></div>                <script type=\'text/javascript\'>                    var divElement = document.getElementById(\'viz1651165037078\');                    var vizElement = divElement.getElementsByTagName(\'object\')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width=\'1000px\';vizElement.style.height=\'827px\';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width=\'1000px\';vizElement.style.height=\'827px\';} else { vizElement.style.width=\'100%\';vizElement.style.height=\'1627px\';}                     var scriptElement = document.createElement(\'script\');                    scriptElement.src = \'https://public.tableau.com/javascripts/api/viz_v1.js\';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></div>";
 
@@ -33,13 +39,23 @@ export default function Home() {
 
       <main className={styles.grafico}>
        
-       <h1>Hola</h1>
+       <h1>Hola Juanca ahi va con imagen</h1>
        
+       <Image
+          loader={myLoader}
+          src="wikipedia/commons/4/4b/500px.jpg"
+          alt="Picture of the author"
+          width={200}
+          height={200}
+      />
        <div  dangerouslySetInnerHTML={{__html: html}} ></div>
+
+      
 
        
         
       </main>
+
 
       <footer className={styles.footer}>
         <a
